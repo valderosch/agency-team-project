@@ -39,16 +39,12 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         try  {
             String jwt = jwtService.parseJwt(request);
 
-            // Check if JWT is valid and if token is valid
             if (jwt != null && jwtService.isTokenValid(jwt) && tokenService.isTokenValid(jwt)) {
                 String email = jwtService.getUsernameFromToken(jwt);
                 UserDetailsImpl userDetails = (UserDetailsImpl) userDetailsService.loadUserByUsername(email);
 
-                // Create an authentication token with the user details
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                // Set additional details for the authentication token
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                // Set the authentication token in the security context
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
         } catch (InvalidTokenException e) {
@@ -57,7 +53,6 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             LOGGER.error("Couldn't set user authentication: {}", e.getMessage());
         }
 
-        // Continue the filter chain
         filterChain.doFilter(request, response);
     }
 }

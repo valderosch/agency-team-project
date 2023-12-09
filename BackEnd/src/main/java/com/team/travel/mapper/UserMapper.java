@@ -8,13 +8,7 @@ import com.team.travel.dto.user.UserSaveRequest;
 import com.team.travel.service.LocationService;
 import org.springframework.stereotype.Component;
 
-/**
- * @author Maksym Kleiman
- * @version 1.0.0
- * @project FirstJavaSprintProj
- * @class UserMapper
- * @since 17/05/2023 - 13:59
- **/
+
 @Component
 public class UserMapper {
     private final LocationMapper locationMapper;

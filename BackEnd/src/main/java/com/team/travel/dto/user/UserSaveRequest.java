@@ -1,12 +1,6 @@
 package com.team.travel.dto.user;
 
-/**
- * @author Maksym Kleiman
- * @version 1.0.0
- * @project FirstJavaSpringProj
- * @class UserSaveRequest
- * @since 17/05/2023 - 14:20
- **/
+
 public class UserSaveRequest {
     private String firstName;
     private String lastName;

@@ -15,6 +15,4 @@ public interface OrderService {
     void delete(Order order);
 
     List<PageOrderResponse> getAllOrdersPageByUserId(Long userId,int pageNo, int pageSize, String sortBy, String sortDir);
-
-//    List<Order> getOrdersByUserId(Long userId);
 }

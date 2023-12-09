@@ -35,9 +35,6 @@ public class SecurityConfig {
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
-        // In our case, the AuthenticationManager uses a DaoAuthenticationProvider that retrieves user details from the
-        // UserDetailsService. It authenticates the user by simply comparing the password provided in the
-        // UsernamePasswordAuthenticationToken to the password loaded by the UserDetailsService
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
 
         authProvider.setUserDetailsService(userDetailsService);
@@ -48,8 +45,6 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
-        // You can think of AuthenticationManager as a coordinator where you can register multiple providers and based
-        // on the request type it will send the authentication request to the correct provider
         return authConfig.getAuthenticationManager();
     }
 
