@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url(assets/fonts/Montserrat-VariableFont_wght.ttf) format('truetype');
+}
+.Montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+  font-family: 'Comfortaa', cursive;
+  src: url(assets/fonts/Comfortaa-VariableFont_wght.ttf) format('truetype');
+}
+
+.Comfortaa{
+  font-family: 'Comfortaa', cursive;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn-warning {
+  background-color: #FCA311;
+  border-color: #FCA311;
+}
+
+.btn-warning:disabled {
+  cursor: not-allowed;
+  background-color: gray;
+  border-color: gray;
+  opacity: 0.65;
+  pointer-events: all;
+}
+
+.btn-transition {
+  transition: background-color 0.7s ease;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
