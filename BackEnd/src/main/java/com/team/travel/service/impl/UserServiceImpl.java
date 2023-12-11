@@ -52,7 +52,6 @@ public class UserServiceImpl implements UserService {
         if (emailId != null && !emailId.equals(user.getId())) {
             throw new DuplicateException("акаунт з ел. поштою '" + user.getEmail() + "' вже існує");
         }
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return repository.save(user);
     }
 

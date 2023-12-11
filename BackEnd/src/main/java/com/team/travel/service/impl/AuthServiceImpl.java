@@ -30,9 +30,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public AuthResponse authenticate(AuthRequest request) {
-        // Create an authentication token with the provided email and password
         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword());
-        // Perform authentication using Spring's AuthenticationManager
         Authentication authentication = authenticationManager.authenticate(authToken);
 
         String jwt = jwtService.generateToken(authentication);

@@ -19,8 +19,8 @@ public class TourResponse {
     private BigDecimal initialPrice;
     private int discountPercentage;
     private Integer numOfPeople;
-    private Integer availableOrderCount; // FOR ORDINARY USER THIS FIELD IS ABSENT / NULL
-    private TourStatus status; // FOR ORDINARY USER STATUS CAN BE ONLY HOT OR AVAILABLE
+    private Integer availableOrderCount;
+    private TourStatus status;
     private LocalDate startDate;
     private LocalDate endDate;
     private LocalDateTime createdAt;

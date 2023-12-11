@@ -38,13 +38,13 @@ export class MainPageComponent implements OnInit {
 
 
   carouselItems = [
-    { image: './assets/images/tour/2a8372ec-2779-4d11-960a-fcf840c10379.jpg',
-      title: 'Feel free: Нью-Йорк + Ніагара '},
+    { image: '../../assets/images/tours/israel-tel-aviv-1-big.jpg',
+      title: 'Сонячний Тель-Авів?'},
 
-    { image: './assets/images/tour/4e617d27-c8f7-436d-af10-280305f126b0.jpg',
-      title: 'Glimpse of Paris'},
+    { image: '../../assets/images/tours/7cef64ab-90d0-4523-b7b1-8981b3359ca1.jpg',
+      title: 'Чи може вишуканість Австрії?'},
 
-    { image: './assets/images/tour/73d6b52e-e3f7-402b-8d17-c89195762cb5.jpg',
+    { image: '../../assets/images/tours/9e39f0b4-3d84-4953-a58c-f3babddbf3b3.jpg',
       title: 'Усміхнись, ми в Монтенеґро'
     }
   ];

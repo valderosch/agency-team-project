@@ -32,10 +32,9 @@ public class TourFilterDAO {
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery<TourResponse> criteriaQuery = criteriaBuilder.createQuery(TourResponse.class);
 
-        // аналогічно select * from
         Root<TourResponse> root = criteriaQuery.from(TourResponse.class);
 
-        // where вираз
+
         Predicate pricePredicateStart = criteriaBuilder
                 .greaterThan(root.get("price"),priceStart);
 
@@ -51,7 +50,6 @@ public class TourFilterDAO {
         Predicate endDatePredicate = criteriaBuilder
                 .equal(root.get("endDate"),endDate);
 
-        // аналогічно параметру AND В SQL
 
         Predicate andPredicate = criteriaBuilder.and(
                 pricePredicateStart,
@@ -60,12 +58,8 @@ public class TourFilterDAO {
                 startDatePredicate,
                 endDatePredicate
         );
-        //SELECT * FROM tour WHERE price > priceStart AND price < priceEnd
-        // AND status = status AND startDate = startDate AND endDate = endDate
-        // Формуємо готовий запит зі сформованим предикатом andPredicate
         criteriaQuery.where(andPredicate);
 
-        //Фінальне формування запиту та  його повернення
         TypedQuery<TourResponse> query = em.createQuery(criteriaQuery);
         return query.getResultList();
     }

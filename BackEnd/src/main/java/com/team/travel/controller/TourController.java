@@ -148,19 +148,6 @@ public ResponseEntity<List<PageTourResponse>> getAllPageTours(
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-//    @GetMapping("/filter/")
-//    public ResponseEntity<List<TourResponse>> getToursByFilter(
-//
-//            @RequestParam(value = "status", defaultValue = "AVAILABLE", required = false) TourStatus status,
-//            @RequestParam(value = "startPrice", defaultValue = "0", required = false) int priceStart,
-//            @RequestParam(value = "endPrice", defaultValue = "999999", required = false) int priceEnd
-//            ) {
-//        List<TourResponse> tours = service.findToursByFilter(status,priceStart,priceEnd).stream().map(mapper::toResponse).toList();
-//        if(tours.isEmpty()){
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<>(tours,HttpStatus.OK);
-//    }
 
 
 

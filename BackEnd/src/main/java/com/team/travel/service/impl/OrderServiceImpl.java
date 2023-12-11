@@ -141,11 +141,4 @@ public class OrderServiceImpl implements OrderService {
 
         return responseList;
     }
-
-
-//    @Override
-//    public List<Order> getOrdersByUserId(Long userId) {
-//       return repository.findByUserId(userId);
-//
-//    }
 }

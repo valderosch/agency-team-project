@@ -87,15 +87,6 @@ public class OrderController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-//    @GetMapping("/user/{userId}")
-//    public ResponseEntity<List<OrdersByUserResponse>> getOrdersByUser(@PathVariable Long userId) {
-//        List<OrdersByUserResponse> orders =  service.getOrdersByUserId(userId).stream().map(mapper::toOrdersByUserResponse).toList();
-//        if (orders.isEmpty()) {
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<>(orders, HttpStatus.OK);
-//    }
-
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<PageOrderResponse>> getOrdersByUser(
             @PathVariable Long userId,
