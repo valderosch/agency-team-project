@@ -1,0 +1,6 @@
+export enum OrderENUM {
+  PENDING = "PENDING",
+  ACCEPTED = "ACCEPTED",
+  PAID = "PAID",
+  REJECTED = "REJECTED"
+}

@@ -1,0 +1,7 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+section {
+  background: #faa499 linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}

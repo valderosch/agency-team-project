@@ -1,0 +1,5 @@
+export enum tourENUM {
+  HOT= "HOT",
+  AVAILABLE = "AVAILABLE",
+  NOT_AVAILABLE = "NOT_AVAILABLE"
+}
