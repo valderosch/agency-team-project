@@ -1,0 +1,29 @@
+<section class="vh-100">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-6">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-md-5">
+            <h3 class="fw-bold text-center mb-5">Вхід</h3>
+            <form [formGroup]="loginForm" class="px-md-2" novalidate autocomplete="off" (ngSubmit)="onLogin()">
+              <div class="form-outline mb-4">
+                <input formControlName="email" type="text" id="email" name="email" class="form-control" placeholder="Електронна пошта" />
+                <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error text-danger fw-bold text-end">Некоректний email</div>
+              </div>
+              <div class="form-outline mb-4">
+                <input formControlName="password" type="password" id="password" name="password" class="form-control" placeholder="Пароль" />
+                <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error text-danger fw-bold text-end">Пароль є обов'язковим</div>
+              </div>
+              <div *ngIf="loginFailed && formSubmitted" class="text-danger text-center mb-4 fw-bold">Не вдалося увійти: {{errorMessage}}</div>
+              <button type="submit" class="btn btn-warning btn-transition w-100 text-white" [disabled]="loginForm.invalid && formSubmitted" [title]="loginForm.invalid && formSubmitted ? 'Заповніть всі поля коректними значеннями' : ''">Увійти</button>
+            </form>
+            <div class="text-center mt-4">
+              <span>Немає акаунту? </span>
+              <a routerLink="/register">Створіть його</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

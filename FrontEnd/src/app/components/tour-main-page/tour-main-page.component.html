@@ -1,0 +1,236 @@
+<app-header></app-header>
+
+
+<div class="Montserrat main">
+
+  <div class="Comfortaa main-tour-search">
+    <div class="container-tour-filter">
+      <div class="tour-filter">
+        <form class="main-search-form" [formGroup]="mainForm" (ngSubmit)="onSubmitMainForm()">
+
+
+          <div class="group">
+            <mat-form-field appearance="outline" class="mat-form-field" *ngIf="showFirstSelect">
+            <mat-label for="countryDeparture" class="mat-label">Звідки</mat-label>
+            <mat-select id="countryDeparture"   placeholder="Звідки" class="mat-select" (selectionChange)="onCountryChangeDeparture($event)" formControlName="countryDepartureId" >
+              <mat-option value="null" disabled selected class="mat-option">Країна</mat-option>
+              <mat-option *ngFor="let country of countries" [value]="country.id">
+                {{country.name}}
+              </mat-option>
+
+            </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="group2">
+            <mat-form-field  appearance="outline" class="mat-form-field" *ngIf="showSecondSelect">
+              <mat-label for="cities" class="mat-label">Звідки</mat-label>
+              <mat-select placeholder="Звідки"  formControlName="locationDepartureId" class="mat-select" id="cities" (selectionChange)="hideSecondSelect()">
+                <mat-option value="null" disabled selected class="mat-option">Місто</mat-option>
+                <mat-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+
+
+
+
+
+          <div class="group">
+            <mat-form-field appearance="outline" class="mat-form-field" *ngIf="showFirstSelectDestination">
+              <mat-label for="countryDestination" class="mat-label">Куди</mat-label>
+              <mat-select id="countryDestination" formControlName="countryDestinationId"  placeholder="Куди" class="mat-select" (selectionChange)="onCountryChangeDestination($event)">
+                <mat-option value="null" disabled selected class="mat-option">Країна</mat-option>
+                <mat-option *ngFor="let country of countries" [value]="country.id">
+                  {{country.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="group4">
+            <mat-form-field appearance="outline" class="mat-form-field" *ngIf="showSecondSelectDestination">
+              <mat-label for="cityDestination" class="mat-label">Куди</mat-label>
+              <mat-select id="cityDestination"  placeholder="Куди" class="mat-select" formControlName="locationDestinationId" (selectionChange)="hideSecondSelectDestination()">
+                <mat-option value="null" disabled selected class="mat-option">Місто</mat-option>
+                <mat-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+
+
+          <div class="group">
+
+            <mat-form-field appearance="outline" class="mat-form-field">
+              <mat-label for="date-start" class="mat-label">Від</mat-label>
+              <input formControlName = "startDate" type="date"  matInput id="date-start" placeholder="Від"/>
+            </mat-form-field>
+          </div>
+
+          <div class="group">
+            <mat-form-field appearance="outline" class="mat-form-field">
+              <mat-label for="date-end" class="mat-label">До</mat-label>
+              <input formControlName="endDate" type="date" matInput id="date-end" placeholder="До"/>
+            </mat-form-field>
+          </div>
+
+
+          <button type="submit" class="main-search-btn">Знайти</button>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="block-main-container">
+
+  <div class="container-filter-and-tour-list">
+    <div class="Comfortaa sidebar-search">
+
+      <div class="sidebar-search-title">
+        <h2>Опції пошуку</h2>
+      </div>
+
+      <div class="sidebar-search-content">
+        <form [formGroup]="documentForm" (ngSubmit)="onSubmit()" class="sidebar-form">
+          <div class="form-container">
+
+            <div class="group">
+              <label for="filter-price-start">Фільтрувати за ціною</label>
+              <p>
+                <input type="number" id="filter-price-start" name="filter-price-start" formControlName="filterPriceStart"/> -
+                <input type="number" id="filter-price-end" name="filter-price-end" formControlName="filterPriceEnd"/>
+              </p>
+            </div>
+
+
+<!--            <div class="group">-->
+<!--              <label for="filter-city">Фільтрувати за містом</label>-->
+<!--              <p>-->
+<!--                <select formControlName="locationId" class="select-cities" id="filter-city" name="filter-city">-->
+<!--                  <option [value]="null" disabled [selected]="true">Місто</option>-->
+<!--                  <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>-->
+<!--                </select>-->
+<!--              </p>-->
+<!--            </div>-->
+
+            <div class="group">
+              <label for="filter-status">Фільтрувати за статусом</label>
+              <p>
+                <select formControlName="filterStatus" id="filter-status" name="filterStatus">
+                  <option [value]="null" disabled [selected]="true">Статус</option>
+                  <option value="1">Гарячі</option>
+                  <option value="2">Доступні</option>
+                  <option value="3">Недоступні</option>
+                </select>
+              </p>
+            </div>
+
+            <div class="group">
+              <label for="sorting">Сортувати</label>
+              <p>
+                <select formControlName="sorting" id="sorting" name="sorting">
+                  <option value="1"> Від дешевих до дорогих</option>
+                  <option value="2">Від дорогих до дешевих</option>
+                  <option value="3">Найбільші знижки</option>
+                  <option value="4">Найменші знижки</option>
+                  <option value="5">Новинки</option>
+                </select>
+              </p>
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="reset" class="btn-reset">Очистити</button>
+            <button type = "submit" [disabled]="!documentForm.valid" class="btn-submit">Застосувати</button>
+          </div>
+
+        </form>
+
+
+
+      </div>
+    </div>
+<!--    </div>-->
+
+
+    <div class="tour-list">
+      <div class="all-tours">
+        <div class="tour" *ngFor="let tour of tours">
+
+
+          <div class="tour-container-without-btn">
+
+
+
+            <div class="container-img">
+              <div class="tour-image">
+                <p><img src="assets/images/{{tour.imagePath}}" alt="Tour image"></p>
+              </div>
+            </div>
+
+            <div class="tour-info">
+
+              <div class="container-title">
+                <h2 class="tour-title">{{tour.name}}</h2>
+              </div>
+
+              <div class="container-info">
+                <div class="tours-main-fields">
+                  <div class="icons-for-info">
+                    <p><i class="fa-sharp fa-solid fa-location-dot" style="color: #2da7ff;"></i><p>
+
+                    <p><i class="fa-solid fa-plane" style="color: #2da7ff;"></i> </p>
+
+                    <p><i class="fa-regular fa-calendar" style="color: #2da7ff;"></i></p>
+
+
+
+
+                  </div>
+                  <div class="fields-for-info">
+                    <p class="tour-destination-text"><a>{{tour.destination.country.name}} , {{tour.destination.city}} </a></p>
+                    <p class="tour-departure-text"> З {{tour.departure.city}}</p>
+                    <p class="tour-date-start-text"> {{tour.startDate | date: 'mediumDate'}} - {{tour.endDate | date: 'mediumDate'}}</p>
+<!--                    <p class="tour-date-end-text"> <b>End</b> {{tour.endDate}}</p>-->
+                  </div>
+                </div>
+
+                <div class="button-price">
+                  <button class="btn-price" routerLink="/tours/{{tour.id}}">{{ tour.initialPrice | currency: ' ₴'}}</button>
+                </div>
+              </div>
+
+
+              </div>
+
+
+          </div>
+        </div>
+        </div>
+    </div>
+  </div>
+    <div class="pagination-block">
+      <mat-paginator class="mat-paginator"
+        [pageSize]="page.pageSize"
+        [pageIndex]="pageIndex"
+        [pageSizeOptions]="pageSizeOptions"
+        [length]="page.totalElements"
+        (page)="onPageChange($event)"
+                     [hidden]="hidePagination">
+
+      </mat-paginator>
+
+<!--      <app-pagination [currentPage]="page.pageNo" [totalPage]="page.totalPages"></app-pagination>-->
+
+    </div>
+
+
+  </div>
+</div>
+
+<app-footer></app-footer>

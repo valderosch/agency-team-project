@@ -1,0 +1,118 @@
+.main{
+
+  display: flex;
+  justify-content: center;
+
+}
+.container-data-page {
+  width: 1237px;
+  display: flex;
+  justify-content: space-between;
+  /*border: 1px solid black;*/
+}
+
+app-nav-bar-profile{
+  margin-top: 8%;
+
+}
+
+.container-personal-data{
+  margin-top: 9%;
+
+  background-color: #E2F3FF;
+  width: 65%;
+  height: 650px;
+  border-radius: 5px;
+}
+
+.personal-data-title{
+  width: 100%;
+  height: 55px;
+  background-color: #FFBA48;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personal-data-title h1{
+  font-size: 24px;
+
+  font-weight: bold;
+}
+
+.personal-data-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form{
+  margin-top: 8%;
+}
+form .group{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+form label{
+  font-weight: 600;
+}
+form label,input,select{
+  font-size: 24px;
+}
+form input,select{
+  margin-left: 30px;
+}
+
+.block-btn{
+  margin-top: 8%;
+
+}
+
+form select{
+  width: 48.5%;
+}
+
+
+.block-btn .btn-edit-save{
+  width: 288px;
+  height: 62px;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #FFBA48;
+  border-radius: 6px;
+  border: 0;
+  color: #E2F3FF;
+}
+
+.block-btn .btn-edit-reset{
+  width: 288px;
+  height: 62px;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #2DA7FF;
+  border-radius: 6px;
+  border: 0;
+  margin-left: 50px;
+  color: #E2F3FF;
+}
+
+.block-btn .btn-edit-save:active{
+  background-color: #FCA311;
+}
+
+.block-btn .btn-edit-reset:active {
+  background-color: #068ff6;
+  color: #E2F3FF;
+}
+
+form select {
+  padding-left: 2%;
+}
+
+app-footer{
+  position: relative;
+  top:260px;
+}

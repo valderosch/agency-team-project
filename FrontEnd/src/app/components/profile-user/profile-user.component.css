@@ -1,0 +1,102 @@
+.main{
+
+  display: flex;
+  justify-content: center;
+
+}
+.container-data-page {
+  width: 1237px;
+  display: flex;
+  justify-content: space-between;
+  /*border: 1px solid black;*/
+}
+
+
+
+app-nav-bar-profile{
+  margin-top: 8%;
+
+}
+
+.container-personal-data{
+  margin-top: 9%;
+
+  background-color: #E2F3FF;
+  width: 65%;
+  height: 600px;
+  border-radius: 5px;
+}
+.personal-data-title{
+  width: 100%;
+  height: 55px;
+  background-color: #FFBA48;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5%;
+}
+
+.personal-data-title h1{
+  font-size: 24px;
+
+  font-weight: bold;
+}
+
+
+.personal-data-form{
+  display: flex;
+  justify-content: center;
+
+
+}
+.personal-data-form ul li{
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.personal-data-form ul li a{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.personal-data-form ul{
+  margin-top: 8%;
+}
+
+.block-btn{
+  display: flex;
+  justify-content:center;
+  margin-top: 10%;
+  gap:40px;
+
+
+}
+
+.block-btn .btn-profile {
+  width: 288px;
+  height: 62px;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #FFBA48;
+  border-radius: 6px;
+  border: 0;
+  color: #E2F3FF;
+}
+
+.block-btn .btn-edit:active{
+  background-color: #FCA311;
+}
+
+.block-btn .btn-logout {
+  background-color: #2DA7FF;
+  color: #E2F3FF;
+
+}
+
+app-footer{
+  position: relative;
+  top:270px;
+}

@@ -1,0 +1,101 @@
+
+<app-header></app-header>
+
+
+
+<div class="main">
+  <div class="container-data-page">
+
+    <app-nav-bar-profile></app-nav-bar-profile>
+
+    <div class="container-order-history">
+      <div class="Montserrat order-history">
+
+        <div class="order-history-title">
+          <h1>Історія замовлень</h1>
+        </div>
+
+        <mat-form-field >
+          <mat-label for="sorting">Сортувати за</mat-label>
+          <mat-select (selectionChange)="onSelectChange($event.value)" name="sorting" id="sorting">
+            <mat-option value="1">Збільшенням ціни</mat-option>
+            <mat-option value="2">Зниженням ціни</mat-option>
+            <mat-option value="3">Найновішими замовленнями</mat-option>
+            <mat-option value="4">Найстарішими замовленнями</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="orders">
+
+          <div *ngFor="let tempOrder of orders" class="order">
+
+            <div class="order-img">
+              <p><img src="./assets/images/{{tempOrder.tour.imagePath}}" alt="order"/> </p>
+            </div>
+
+            <div class="order-info">
+
+              <div class="container-title">
+
+                <h2 class="tour-name">{{tempOrder.tour.name}}</h2>
+              </div>
+
+              <div class="container-info">
+
+                <div class="order-info-without-price-container">
+
+
+                  <div class="icons-for-info">
+
+                    <p><i class="fa-sharp fa-solid fa-location-dot" style="color: #2da7ff;"></i><p>
+
+                    <p><i class="fa-solid fa-plane" style="color: #2da7ff;"></i> </p>
+
+                    <p><i class="fa-regular fa-calendar" style="color: #2da7ff;"></i></p>
+
+                    <p><i class="fa-sharp fa-solid fa-arrows-spin" style="color: #2da7ff;"></i>
+
+
+                  </div>
+
+                  <div class="text-for-info">
+                    <p>{{tempOrder.tour.destination.country.name}} , {{tempOrder.tour.destination.city}}</p>
+                    <p>з {{tempOrder.tour.departure.city}}</p>
+                    <p>з {{tempOrder.tour.startDate}} до {{tempOrder.tour.endDate}}</p>
+                    <p>{{tempOrder.status}}</p>
+                  </div>
+
+                </div>
+
+                <div class="order-info-price-container">
+
+                  <div class="order-price">
+                    <p>{{ tempOrder.price | currency: ' ₴'}}</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<mat-paginator class="mat-paginator"
+               [pageSize]="page.pageSize"
+               [pageIndex]="pageIndex"
+               [pageSizeOptions]="pageSizeOptions"
+               [length]="page.totalElements"
+               (page)="onPageChange($event)">
+
+</mat-paginator>
+
+<app-footer></app-footer>
+

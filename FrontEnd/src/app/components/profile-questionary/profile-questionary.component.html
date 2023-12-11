@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+<div class="main">
+  <div class="container-data-page">
+    <app-nav-bar-profile></app-nav-bar-profile>
+
+    <div class="Montserrat questionary-block">
+
+      <div class="questionary-title">
+        <h1>Анкета користувача</h1>
+      </div>
+
+      <div class="personal-data-form">
+
+        <form [formGroup]="documentForm" (ngSubmit)="onSubmit()" >
+
+
+          <div class="group">
+          <mat-form-field appearance="outline" class="mat-form-field-2">
+            <mat-label for="age" >Вік</mat-label>
+
+            <input class="mat-input-element" matInput type="number" id="age"  formControlName="age">
+<!--            <mat-error *ngIf="documentForm.controls.name.hasError('required')">Name is required</mat-error>-->
+          </mat-form-field>
+          </div>
+
+          <div class="group">
+
+          <mat-form-field appearance="outline" class="mat-form-field-2">
+            <mat-label for="destination">Бажане направлення</mat-label>
+            <mat-select class="mat-input-element" id="destination" formControlName = "destination" required  >
+              <mat-option value="1">Оберіть напрямок</mat-option>
+              <mat-option value="beach-resting">Пляжний відпочинок</mat-option>
+              <mat-option value="active-resting">Активний відпочинок</mat-option>
+              <mat-option value="shopping-resting">Шопінг</mat-option>
+              <mat-option value="diving-resting">Дайвінг</mat-option>
+              <mat-option value="luxury-resting"> Luxury-відпочинок</mat-option>
+              <mat-option value="diving-resting">SPA & Wellness</mat-option>
+              <mat-option value="teen-resting"> Молодіжний відпочинок</mat-option>
+              <mat-option value="excursion">Екскурсія</mat-option>
+              <mat-option value="all-inclusive">Все включено</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+          </div>
+
+          <div class="group">
+
+          <mat-form-field appearance="outline" class="mat-form-field-2">
+            <mat-label for="budget">Бюджет</mat-label>
+            <input class="mat-input-element" matInput type="number" id="budget" formControlName="budget" required />
+          </mat-form-field>
+          </div>
+
+          <div class="group">
+
+          <mat-form-field appearance="outline" class="mat-form-field-2">
+            <mat-label for="duration">Тривалість</mat-label>
+            <input class="mat-input-element" matInput type="number" id="duration" formControlName="duration" required />
+          </mat-form-field>
+
+          </div>
+
+
+          <div class="group">
+
+              <fieldset>
+                <legend><span class="date-b"> Бажані дати</span></legend>
+
+                <mat-form-field appearance="outline" class="mat-form-field-3">
+                  <mat-label for="startDate">Дата початку</mat-label>
+              <input matInput type="date" placeholder="Дата початку" formControlName="startDate">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="mat-form-field-2">
+                  <mat-label for="endDate">Дата закінчення</mat-label>
+              <input matInput type="date" placeholder="Дата закінчення" formControlName="endDate">
+                </mat-form-field>
+<!--                <mat-error *ngIf="form.controls.email.hasError('required')">Email is required</mat-error>-->
+<!--                <mat-error *ngIf="form.controls.email.hasError('email')">Invalid email format</mat-error>-->
+              </fieldset>
+          </div>
+
+
+
+<!--          <mat-form-field>-->
+<!--            <textarea matInput placeholder="Message" formControlName="message"></textarea>-->
+<!--            <mat-error *ngIf="form.controls.message.hasError('required')">Message is required</mat-error>-->
+<!--          </mat-form-field>-->
+
+          <button class="mat-button" mat-raised-button  type="submit" [disabled]="documentForm.invalid">Відправити</button>
+        </form>
+
+
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+  </div>

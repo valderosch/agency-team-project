@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+<div class="Montserrat main" >
+
+  <div class="wrapper-1">
+
+    <div class="main-banner-and-describe-banner">
+
+      <div class="main-banner-container">
+
+      <div class="main-banner">
+        <p>
+          Подорожуємо комфортно<br><br>
+          разом з<br><br><br>
+          <span class="Comfortaa big-text"> YMS TRAVEL </span>
+        </p>
+      </div>
+
+      </div>
+
+      <div class="describe-banner">
+        <p>
+          <span class="Comfortaa"> YMS TRAVEL</span>  - це провідний туристичний оператор в Україні ! <br><br>
+
+          Ми пропонуємо демократичні ціни, зручний сервіс та комфортабельний відпочинок.
+          Використовуючи наш туропреатор, ви можете відвідати будь-який куточок планети,
+          не витрачаючи на це багато часу, всі турботи ми беремо на себе.
+
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="wrapper-2">
+    <ngb-carousel class="ngb-carousel" #carousel [interval]="3000" [keyboard]="true" [@slideAnimation]="animations"
+                  [@carouselAnimation] ="animations">
+      <ng-template ngbSlide class="ngb-template" *ngFor = "let item of carouselItems">
+
+
+        <div class="carousel-img">
+        <img src="{{item.image}}" alt="{{item.title}}">
+        </div>
+
+        <div class="carousel-caption">
+          <h3>{{item.title}}</h3>
+
+        </div>
+      </ng-template>
+
+    </ngb-carousel>
+
+  </div>
+
+  <div class="wrapper-3">
+
+
+        <div class="wrapper-btn">
+          <button (click)="routeTourPage()" class="book-tour">Замовити тур</button>
+        </div>
+
+  </div>
+
+
+</div>
+
+
+<app-footer></app-footer>

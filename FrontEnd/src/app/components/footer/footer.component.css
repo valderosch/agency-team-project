@@ -1,0 +1,60 @@
+*{
+
+}
+
+footer{
+  width: 100%;
+  height: 560px;
+  background-color: #7FC6FA;
+
+  /*justify-content: center;*/
+}
+.wrapper-main{
+  display: flex;
+}
+.company-name{
+  font-size: 32px;
+  color: #ffffff;
+  margin-left: 444px;
+  margin-top: 132px;
+}
+
+.company-desc{
+  width: 500px;
+  margin-left: 352px;
+  margin-top: 24px;
+  color: #DAEFFF;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.wrapper-right{
+  margin-left: 480px;
+  margin-top: 124px;
+}
+
+.company-email{
+  display: flex;
+}
+
+.company-phone{
+  display: flex;
+  margin-top: 32px;
+}
+
+.company-location{
+  display: flex;
+  margin-top: 32px;
+}
+
+.company-email-text ,.company-phone-text ,.company-location-text {
+  color: #5F5F5F;
+  margin-left: 28px;
+  margin-top: 18px;
+}
+
+.copyright-text{
+  margin-left: 65%;
+  margin-top: 4%;
+  color: #BAE2FF;
+}

@@ -1,0 +1,15 @@
+<div class="navbar-container Montserrat">
+  <ul>
+    <li class="navbar-tours">
+      <a routerLink="/admin-tours" routerLinkActive="active">Тури</a>
+    </li>
+
+    <li class="navbar-orders">
+      <a routerLink="/admin-orders" routerLinkActive="active">Замовлення</a>
+    </li>
+
+    <li class="navbar-logout">
+      <button *ngIf="isLoggedIn()" class="btn-profile btn-logout" (click)="logout()">Вийти</button>
+    </li>
+  </ul>
+</div>

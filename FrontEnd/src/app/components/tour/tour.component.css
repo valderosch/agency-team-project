@@ -1,0 +1,35 @@
+.img-container {
+    flex: 0 1 60%;
+    background-size: 100% 100%;
+}
+
+h1, p, div {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown-btn {
+    font-size: 20px;
+}
+
+.tour-attributes {
+    list-style-type: none;
+}
+
+.tour-attribute {
+    display: inline-block;
+    background-color: #f1f2f3;
+    padding: 4px 8px;
+    border-radius: 9px;
+    margin-right: 8px;
+    pointer-events: none;
+}
+
+.final-price {
+    font-size: 30px;
+}
+
+.discount {
+    background-color: #fdefef;
+    padding: 4px 8px;
+    font-size: 14px;
+}

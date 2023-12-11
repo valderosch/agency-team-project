@@ -1,0 +1,131 @@
+<app-header></app-header>
+
+<div class="main">
+  <div class="container-data-page">
+
+    <app-admin-dashboard></app-admin-dashboard>
+
+    <div class="container-order-history">
+      <div class="Montserrat order-history">
+
+        <div class="order-history-title">
+
+
+
+          <h1>Історія замовлень</h1>
+
+
+        </div>
+
+        <div class="orders">
+
+          <mat-form-field >
+            <mat-label for="sorting">Сортувати за</mat-label>
+            <mat-select (selectionChange)="onSelectChange($event.value)" name="sorting" id="sorting">
+              <mat-option value="1">Збільшенням ціни</mat-option>
+              <mat-option value="2">Зниженням ціни</mat-option>
+              <mat-option value="3">Найновішими замовленнями</mat-option>
+              <mat-option value="4">Найстарішими замовленнями</mat-option>
+            </mat-select>
+
+          </mat-form-field>
+
+          <div *ngFor="let tempOrder of orders" class="order">
+
+            <div class="imgAndButtonContainer">
+              <div class="order-img">
+                <p><img src="assets/images/{{tempOrder.tour.imagePath}}" alt="order"/> </p>
+              </div>
+
+              <div class="order-buttons">
+                <div *ngIf="tempOrder.status === 'PENDING' " class="buttons">
+                  <button (click)="acceptOrder(tempOrder)" class="btn-accept">Підтвердити</button>
+                  <button (click)="rejectOrder(tempOrder)" class="btn-reject">Відхилити</button>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="order-info">
+
+              <div class="container-title">
+
+                <h2 class="tour-name">{{tempOrder.tour.name}}</h2>
+              </div>
+
+              <div class="container-info">
+
+                <div class="order-info-without-price-container">
+
+
+                  <div class="icons-for-info">
+
+                    <p><i class="fa-sharp fa-solid fa-location-dot" style="color: #2da7ff;"></i><p>
+
+                    <p><i class="fa-solid fa-plane" style="color: #2da7ff;"></i> </p>
+
+                    <p><i class="fa-regular fa-calendar" style="color: #2da7ff;"></i></p>
+
+                    <p><i class="fa-solid fa-person" style="color: #2da7ff;"></i>
+
+                    <p><i class="fa-solid fa-at" style="color: #2da7ff;"></i></p>
+
+                    <p><i class="fa-solid fa-phone" style="color: #2da7ff;"></i></p>
+
+                    <p><i class="fa-sharp fa-solid fa-money-bill" style="color: #2da7ff;"></i></p>
+
+                    <p><i class="fa-sharp fa-solid fa-business-time" style="color: #2da7ff;"></i></p>
+
+                    <p><b>STATUS</b></p>
+
+                  </div>
+
+                  <div class="text-for-info">
+                    <p>{{tempOrder.tour.destination.country.name}},{{tempOrder.tour.destination.city}}</p>
+
+                    <p>з {{tempOrder.tour.departure.city}}</p>
+
+                    <p>з {{tempOrder.tour.startDate}} до {{tempOrder.tour.endDate}}</p>
+
+                    <p>{{tempOrder.user.firstName}} {{tempOrder.user.lastName}}</p>
+
+                    <p>{{tempOrder.user.email}}</p>
+
+                    <p>{{tempOrder.user.phoneNumber}}</p>
+
+                    <p>{{ tempOrder.price | currency: ' ₴'}}</p>
+
+                    <p>{{tempOrder.createdAt}}</p>
+
+                    <p>{{tempOrder.status}}</p>
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-paginator class="mat-paginator"
+               [pageSize]="page.pageSize"
+               [pageIndex]="pageIndex"
+               [pageSizeOptions]="pageSizeOptions"
+               [length]="page.totalElements"
+               (page)="onPageChange($event)">
+
+</mat-paginator>
+
+
+<app-footer></app-footer>

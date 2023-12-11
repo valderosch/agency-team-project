@@ -1,0 +1,191 @@
+.main{
+  /*display: flex;*/
+  /*justify-content: center;*/
+}
+
+
+.wrapper-1{
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper-3{
+  display: flex;
+  justify-content: center;
+}
+
+.main-banner-and-describe-banner{
+  width: 56%;
+
+}
+
+.main-banner{
+  margin-top: 150px;
+
+  height: 328px;
+  /*height: 54%;*/
+  background-color: #FCA311;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.main-banner p{
+  font-size: 40px;
+  text-align: center;
+}
+
+.main-banner p span.big-text{
+  font-size: 64px;
+  font-weight: bold;
+
+}
+
+.describe-banner{
+  height: 300px;
+  /*height: 57%;*/
+  background-color: #7FC6FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.describe-banner p{
+  font-size: 24px;
+  font-weight: bold;
+  color: #F9FFFF;
+  width: 1000px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.sales-banner{
+
+  width: 56%;
+}
+.banner-text{
+  margin-top: 12%;
+  background: linear-gradient(to top, #0099ff 28%, #66ccff 100%);
+  color: #EEF1F2;
+  height: 380px;
+  border-radius: 5px 5px 0 0;
+  line-height: 40px;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.banner-img img{
+  border-radius: 0 0 5px 5px;
+}
+
+.banner-text-container{
+
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container-img{
+
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container-img p img{
+  width: 100%;
+
+}
+
+.sales-banner{
+  margin-top: 270px;
+}
+
+.banner-text p{
+  font-size: 48px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.banner-text p span.big-text{
+  font-size: 55px;
+}
+
+.wrapper-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper-btn button.book-tour{
+  margin-top: 50px;
+  width: 400px;
+  height: 80px;
+  font-size: 32px;
+  font-weight: bold;
+  border:0;
+  color: #ffffff;
+  background-color: #FFBA48;
+  border-radius: 3px;
+  z-index: 1000;
+  /*position: relative;*/
+  /*bottom: 170px;*/
+}
+.wrapper-btn button.book-tour:active{
+  background-color: #FA9B00;
+}
+app-footer{
+  position: relative;
+  top:150px;
+}
+
+.wrapper-2{
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 200px;
+}
+
+
+.ngb-carousel {
+
+
+}
+
+
+.ngb-carousel .carousel-indicators {
+
+  bottom: 10px;
+  color: #fff;
+}
+
+
+
+
+.ngb-carousel .carousel-caption {
+
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  color: #fff;
+}
+
+
+.ngb-carousel img {
+
+  width: 1920px;
+  height: 900px;
+  border-radius: 6px;
+
+}
+
+.ngb-carousel .carousel-caption h3{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+

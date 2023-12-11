@@ -1,0 +1,29 @@
+.navbar-container{
+
+}
+
+ul li{
+  height: 65px;
+  width: 265px;
+  margin-top: 8%;
+  border-radius: 6px;
+  list-style-type: none;
+  background-color: #5EB3F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li a{
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+ul li button{
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  border: 0;
+  background-color: #5EB3F0;
+}

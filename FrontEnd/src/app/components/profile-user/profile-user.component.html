@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div class="main">
+
+  <div class="container-data-page">
+
+    <app-nav-bar-profile></app-nav-bar-profile>
+
+
+
+    <div class="container-personal-data">
+
+      <div class="Montserrat personal-data">
+
+        <div class="personal-data-title">
+          <h1>Особисті дані</h1>
+        </div>
+
+        <div class="personal-data-form">
+
+          <ul class="personal-data-label">
+            <li>Ім'я: </li>
+            <li>Прізвище : </li>
+            <li>Номер телефону : </li>
+            <li>Електронна пошта : </li>
+            <li>Місто : </li>
+          </ul>
+
+          <ul  class="personal-data-input">
+            <li>{{user.firstName}}</li>
+            <li>{{user.lastName}}</li>
+            <li>{{user.phoneNumber}}</li>
+            <li>{{user.email}}</li>
+            <li>{{user.location.city}}</li>
+          </ul>
+
+
+        </div>
+
+        <div class="block-btn">
+            <button (click)="editProfile()" class="btn-profile btn-edit">Редагувати</button>
+            <button *ngIf="isLoggedIn()" class="btn-profile btn-logout" (click)="logout()">Вийти</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<app-footer></app-footer>

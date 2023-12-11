@@ -1,0 +1,234 @@
+.main{
+  display: flex;
+  justify-content: center;
+}
+
+.container-data-page{
+  width: 1237px;
+  display: flex;
+  justify-content: space-between;
+}
+
+app-admin-dashboard{
+  margin-top: 10%;
+}
+
+.container-order-history{
+  margin-top: 9%;
+  width: 70%;
+
+
+
+}
+
+.order-history-title{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.order-history-title h1{
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 36px;
+}
+.orders{
+  margin-top: 4%;
+}
+.order{
+  display: flex;
+  margin: 3%;
+  padding: 4%;
+  justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 600px;
+}
+
+.order-info .container-title h2{
+  width: 240px;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 44px;
+}
+
+.order .order-img img{
+  width: 330px;
+  height: 190px;
+  border-radius: 6px;
+}
+
+.order .order-price{
+  width: 180px;
+  height: 50px;
+  background-color: #FCA311;
+  color: #ffffff;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+
+}
+
+.order .order-price p{
+  margin-top: 9%;
+}
+
+
+
+.order-info-without-price-container{
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.text-for-info{
+  position: relative;
+  left: 5%;
+}
+
+.order-buttons .btn-accept{
+  width: 155px;
+  height: 50px;
+  font-size: 22px;
+  background-color: #2DA7FF;
+  color: #ffffff;
+  border:0;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.order-buttons .btn-reject{
+  width: 155px;
+  height: 50px;
+  font-size: 22px;
+  background-color: #FCA311;
+  color: #ffffff;
+  border:0;
+  border-radius: 4px;
+  margin-left: 5%;
+  font-weight: 600;
+}
+
+.order-buttons .btn-accept:active{
+  background-color: #0690ff;
+}
+
+.order-buttons .btn-reject:active{
+  background-color: #ec9800;
+}
+
+
+
+.order-buttons .buttons{
+  margin-top: 15%;
+}
+
+
+app-admin-dashboard{
+  margin-top: 8%;
+}
+.container-orders{
+  margin-top: 9%;
+  background-color: #e2f3ff;
+  width: 65%;
+  height: 600px;
+}
+
+.orders-title{
+  width: 100%;
+  height: 50px;
+  background-color: #ffba48;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.orders-title h1{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+app-footer{
+  position: relative;
+  top:150px;
+}
+
+:host ::ng-deep .mat-paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+:host ::ng-deep .mat-paginator .mat-paginator-range-label {
+  color: #555;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+:host ::ng-deep .mat-paginator .mat-paginator-navigation-buttons .mat-icon-button {
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin: 0 4px;
+}
+
+:host ::ng-deep .mat-paginator .mat-paginator-navigation-buttons .mat-icon-button:hover {
+  background-color: #e0e0e0;
+}
+
+:host ::ng-deep .mat-paginator .mat-paginator-navigation-buttons .mat-icon-button mat-icon {
+  color: #555;
+  font-size: 20px;
+}
+
+:host ::ng-deep .mat-paginator .mat-paginator-page-size-label {
+  color: #555;
+  margin-right: 10px;
+}
+
+:host ::ng-deep .mat-paginator .mat-select {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+:host ::ng-deep .mat-paginator .mat-option {
+  font-size: 14px;
+  color: #555;
+}
+
+:host ::ng-deep .mat-paginator .mat-option:hover {
+  background-color: #e0e0e0;
+}
+
+:host ::ng-deep .mat-paginator .mat-paginator-range-actions .mat-button {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #555;
+  margin: 0 4px;
+}
+
+:host ::ng-deep .mat-paginator .mat-paginator-range-actions .mat-button:hover {
+  background-color: #e0e0e0;
+}
+
+:host ::ng-deep .mat-paginator .mat-paginator-range-actions .mat-button-disabled {
+  color: #ccc;
+}
+
+:host ::ng-deep .mat-form-field{
+  position: relative;
+  left: 5%;
+}
+:host ::ng-deep .mat-form-field-label{
+  font-weight: bold;
+}
+

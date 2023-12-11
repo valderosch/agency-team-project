@@ -1,0 +1,95 @@
+.main{
+  display: flex;
+  justify-content: center;
+}
+
+.container-data-page{
+  width: 1237px;
+  display: flex;
+  justify-content: space-between;
+}
+
+app-nav-bar-profile{
+  margin-top: 8%;
+
+}
+
+.questionary-block{
+  margin-top: 9%;
+  width: 70%;
+
+
+
+}
+
+::ng-deep .mat-form-field-2,.mat-form-field-3{
+  width: 800px;
+}
+
+
+::ng-deep .mat-form-field-underline{
+  background-color: #4285f4;
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color: #4285f4;
+}
+
+.personal-data-form{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+::ng-deep .mat-input-element {
+
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+
+
+.questionary-title{
+  display: flex;
+  justify-content: center;
+
+}
+.questionary-title h1{
+  font-size: 40px;
+  font-weight: 600;
+
+}
+
+::ng-deep .mat-button {
+  background-color: #2DA7FF;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 120px;
+  height: 40px;
+ ;
+}
+
+::ng-deep .mat-button:hover {
+  background-color: #3367d6;
+}
+
+.date-b{
+  font-size: 20px;
+  margin-left: 1%;
+  color: #5F5F5F;
+}
+fieldset ::ng-deep .mat-form-field-3{
+  margin-top: 15px;
+}
+fieldset{
+  margin-top: 3%;
+}
+
+::ng-deep .mat-datepicker-toggle .mat-datepicker-toggle-default-icon {
+  font-size: 24px;
+}
+

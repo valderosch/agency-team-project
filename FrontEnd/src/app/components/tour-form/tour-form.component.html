@@ -1,0 +1,119 @@
+<app-header></app-header>
+<div class="container my-4">
+    <div class="border shadow-sm py-4 px-5 rounded">
+        <h3 class="fw-bold text-center mb-4">{{isUpdateMode ? 'Оновити тур' : 'Новий тур'}}</h3>
+        <form [formGroup]="tourForm" novalidate autocomplete="off" (ngSubmit)="onSave()">
+            <div class="d-flex gap-4">
+                <div class="img-picker">
+                    <input formControlName="image" type="file" accept="image/png, image/jpeg" id="image" name="image" class="form-control" (change)="setPreviewImage($event)">
+                    <div class="preview rounded border mt-2">
+                        <img [src]="tour.imagePath ? '/assets/images/' + tour.imagePath : ''" class="tour-img rounded" id="preview-img" alt="tour image">
+                    </div>
+                    <div *ngIf="tourForm.controls['image'].invalid && tourForm.controls['image'].touched" class="error text-danger fw-bold text-center mb-3">Фото (jpeg, jpg, png, gif) є обов'язковим</div>
+                    <div *ngIf="imageUploadError" class="error text-danger fw-bold text-center mb-3">{{imageUploadError}}</div>
+                </div>
+
+                <div class="flex-grow-1">
+                    <div class="mb-3">
+                        <input formControlName="name" type="text" id="name" name="name" class="form-control" placeholder="Назва">
+                        <div *ngIf="tourForm.controls['name'].invalid && tourForm.controls['name'].touched" class="error text-danger fw-bold text-end">Назва є обов'язковою (від 3 до 128 символів)</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <select formControlName="categoryId" class="form-control" id="categories" name="categories">
+                            <option [value]="null" disabled [selected]="true">Категорія</option>
+                            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                        </select>
+                        <div *ngIf="tourForm.controls['categoryId'].invalid && tourForm.controls['categoryId'].touched" class="error text-danger fw-bold text-end">Категорія є обов'язковою</div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <select (change)="onCountryChange($event)" class="form-control" id="departure-countries" name="departure-countries" [class.field-err]="tourForm.controls['departureId'].invalid && tourForm.controls['departureId'].touched">
+                              <option value="null" disabled selected>Країна відправлення</option>
+                              <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select formControlName="departureId" class="form-control" id="departure-cities" name="departure-cities">
+                              <option [value]="null" disabled [selected]="true">Місто відправлення</option>
+                              <option *ngFor="let city of departureCities" [value]="city.id">{{city.name}}</option>
+                            </select>
+                        </div>
+                        <div *ngIf="tourForm.controls['departureId'].invalid && tourForm.controls['departureId'].touched" class="error text-danger fw-bold text-end">Місце відправлення є обов'язковим</div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <select (change)="onCountryChange($event)" class="form-control" id="destination-countries" name="destination-countries" [class.field-err]="tourForm.controls['destinationId'].invalid && tourForm.controls['destinationId'].touched">
+                              <option value="null" disabled selected>Країна прибуття</option>
+                              <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select formControlName="destinationId" class="form-control" id="destination-cities" name="destination-cities">
+                              <option [value]="null" disabled [selected]="true">Місто прибуття</option>
+                              <option *ngFor="let city of destinationCities" [value]="city.id">{{city.name}}</option>
+                            </select>
+                        </div>
+                        <div *ngIf="tourForm.controls['destinationId'].invalid && tourForm.controls['destinationId'].touched" class="error text-danger fw-bold text-end">Місце прибуття є обов'язковим</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input formControlName="price" type="number" id="price" name="price" class="form-control" placeholder="Ціна"  min="0" max="2000000">
+                        <div *ngIf="tourForm.controls['price'].invalid && tourForm.controls['price'].touched" class="error text-danger fw-bold text-end">Ціна є обов'язковою (від 0 до 2000000)</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input formControlName="discountPercentage" type="number" id="discount" name="discount" class="form-control" placeholder="Знижка (%)" min="0" max="100">
+                        <div *ngIf="tourForm.controls['discountPercentage'].invalid && tourForm.controls['discountPercentage'].touched" class="error text-danger fw-bold text-end">Відсоток знижки повинен знаходитись в діапазоні від 0 до 100</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input formControlName="numOfPeople" type="number" id="num-of-people" name="num-of-people" class="form-control" placeholder="Кількість людей" min="1" max="8">
+                        <div *ngIf="tourForm.controls['numOfPeople'].invalid && tourForm.controls['numOfPeople'].touched" class="error text-danger fw-bold text-end">Кількість людей (від 1 до 8) є обов'язковою</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input formControlName="availableOrderCount" type="number" id="order-count" name="order-count" class="form-control" placeholder="Кількість дозволених замовлень" min="0">
+                        <div *ngIf="tourForm.controls['availableOrderCount'].invalid && tourForm.controls['availableOrderCount'].touched" class="error text-danger fw-bold text-end">Кількість дозволених замовлень (від 0) є обов'язковою</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <select formControlName="status" class="form-control" id="status" name="status">
+                            <option [value]="null" disabled [selected]="true">Статус</option>
+                            <option value="AVAILABLE">Доступний</option>
+                            <option value="HOT">Гарячий</option>
+                            <option value="NOT_AVAILABLE">Недоступний</option>
+                        </select>
+                        <div *ngIf="tourForm.controls['status'].invalid && tourForm.controls['status'].touched" class="error text-danger fw-bold text-end">Статус є обов'язковим</div>
+                    </div>
+
+                    <div class="row mb-3 align-items-center">
+                        <div class="col">
+                            <input formControlName="startDate" type="date" id="start-date" name="start-date" class="form-control" [class.field-err]="tourForm.errors?.['dateRange']">
+                            <div *ngIf="tourForm.controls['startDate'].invalid && tourForm.controls['startDate'].touched" class="error text-danger fw-bold text-end">Дата початку туру є обов'язковою</div>
+                        </div>
+                        <div class="col-sm-1 text-center">до</div>
+                        <div class="col">
+                            <input formControlName="endDate" type="date" id="end-date" name="end-date" class="form-control" [class.field-err]="tourForm.errors?.['dateRange']">
+                            <div *ngIf="tourForm.controls['endDate'].invalid && tourForm.controls['endDate'].touched" class="error text-danger fw-bold text-end">Дата кінця туру є обов'язковою</div>
+                        </div>
+                        <div *ngIf="tourForm.errors?.['dateRange']" class="error text-danger fw-bold text-end">Некоректна тривалість туру</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <textarea formControlName="description" id="description" name="description" class="form-control" placeholder="Опис"></textarea>
+                <div *ngIf="tourForm.controls['description'].invalid && tourForm.controls['description'].touched" class="error text-danger fw-bold text-end">Опис є обов'язковим</div>
+            </div>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-secondary btn-transition me-2 px-4" (click)="cancel()">Скасувати</button>
+                <button type="submit" class="btn btn-warning btn-transition text-white px-4" [disabled]="tourForm.invalid && formSubmitted" [title]="tourForm.invalid && formSubmitted ? 'Заповність всі поля коректними значеннями' : ''">Зберегти</button>
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

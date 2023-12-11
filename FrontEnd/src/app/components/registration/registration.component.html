@@ -1,0 +1,70 @@
+<section class="vh-100" >
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-6">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-md-5">
+            <h3 class="fw-bold text-center mb-5">Реєстрація</h3>
+            <form [formGroup]="registrationForm" class="px-md-2" novalidate autocomplete="off" (ngSubmit)="onRegistration()">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input formControlName="firstName" type="text" id="firstName" name="firstName" class="form-control" placeholder="Ім'я" />
+                    <div *ngIf="registrationForm.controls['firstName'].invalid && registrationForm.controls['firstName'].touched" class="error text-danger fw-bold text-end">Ім'я є обов'язковим</div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input formControlName="lastName" type="text" id="lastName" name="lastName" class="form-control" placeholder="Прізвище" />
+                    <div *ngIf="registrationForm.controls['lastName'].invalid && registrationForm.controls['lastName'].touched" class="error text-danger fw-bold text-end">Прізвище є обов'язковим</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input formControlName="phoneNumber" type="tel" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="Номер телефону" />
+                <div *ngIf="registrationForm.controls['phoneNumber'].invalid && registrationForm.controls['phoneNumber'].touched" class="error text-danger fw-bold text-end">Некоректний номер телефону</div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <select (change)="onCountryChange($event)" class="form-control" id="countries" name="countries">
+                      <option value="null" disabled selected>Країна</option>
+                      <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <select formControlName="locationId" class="form-control" id="cities" name="cities">
+                      <option [value]="null" disabled [selected]="true">Місто</option>
+                      <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input formControlName="email" type="text" id="email" name="email" class="form-control" placeholder="Електронна пошта" />
+                <div *ngIf="registrationForm.controls['email'].invalid && registrationForm.controls['email'].touched" class="error text-danger fw-bold text-end">Некоректний email</div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input formControlName="password" type="password" id="password" name="password" class="form-control" placeholder="Пароль" />
+                <div *ngIf="registrationForm.controls['password'].invalid && registrationForm.controls['password'].touched" class="error text-danger fw-bold text-end">Пароль повинен містити щонайменше 5 символів (літер або цифр)</div>
+              </div>
+
+              <div id="status" class="text-center mb-4 fw-bold">{{statusMessage}}</div>
+              <button type="submit" class="btn btn-warning btn-transition w-100 text-white" [disabled]="registrationForm.invalid && formSubmitted" [title]="registrationForm.invalid && formSubmitted ? 'Заповність всі поля коректними значеннями' : ''">Зареєструватись</button>
+            </form>
+            <div class="text-center mt-4">
+              <span>Вже є акаунт? </span>
+              <a routerLink="/login">Ввійти</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

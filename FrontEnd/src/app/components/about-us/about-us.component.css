@@ -1,0 +1,196 @@
+.about-company-block{
+  display: flex;
+  justify-content: center;
+}
+.about-company-img-wrapper{
+  width: 710px;
+  height: 440px;
+  margin-top: 80px;
+}
+.about-company-img-wrapper img{
+  width: 600px;
+  height: 440px;
+  border-radius: 5px;
+}
+.about-company-text-wrapper{
+  width: 500px;
+  height: 240px;
+
+}
+
+.about-company-text-wrapper h2.about-title{
+  margin-top: 80px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #FCA311;
+}
+
+.about-company-text-wrapper h1.company-name{
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 54px;
+}
+
+.about-company-text-wrapper p.desc-company{
+  margin-top: 40px;
+  font-size: 18px;
+  line-height: 30px;
+
+}
+
+
+.about-services-block{
+  display: flex;
+  justify-content: center;
+  background-color: #F5F5F5;
+  margin-top: 80px;
+  height: 600px;
+}
+
+.services-wrapper-text{
+  width: 500px;
+}
+.services-wrapper-img{
+  width: 700px;
+  height: 440px;
+  margin-top: 80px;
+
+}
+
+.services-wrapper-img img{
+  border-radius: 5px;
+  margin-left: 70px;
+  width: 650px;
+  height: 440px;
+}
+
+.services-wrapper-text h1.services-title{
+  font-size: 48px;
+  margin-top: 80px;
+  line-height: 54px;
+}
+
+.services-wrapper-text p.services-desc{
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  width: 490px;
+  margin-top: 44px;
+}
+
+.services-wrapper-text ul{
+  position: relative;
+  right: 30px;
+  margin-top: 40px;
+
+}
+
+.services-wrapper-text ul li{
+
+  list-style-type: none;
+}
+
+.services-wrapper-text ul li a{
+  font-size: 18px;
+  font-weight: 400;
+  color: #5FBBFD;
+  text-decoration: none;
+}
+.services-wrapper-text ul li a:hover{
+  font-size: 18px;
+  font-weight: 400;
+  color: #5FBBFD;
+  text-decoration: underline;
+}
+
+.services-wrapper-text .search-tour-btn{
+  margin-top: 20px;
+  background-color: #FCA311;
+  width: 200px;
+  height: 50px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.services-wrapper-text .search-tour-btn:active {
+  background-color: #ffc982;
+}
+.about-mission-block{
+  margin-top: 80px;
+}
+.about-mission-block .wrapper-mission-title{
+  display: flex;
+  justify-content: center;
+}
+.about-mission-block h1.mission-title{
+
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 54px;
+}
+
+.about-mission-block .wrapper-mission-desc{
+  margin-top: 44px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.about-mission-block .wrapper-mission-desc p.mission-desc{
+  width: 1240px;
+  text-align: center;
+}
+
+.about-mission-block .mission-blocks{
+  width: 1240px;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 18%;
+  margin-top: 90px;
+}
+
+.about-mission-block .mission-blocks .support-mission-text,
+.offer-mission-text,.confidence-mission-text, .service-mission-text {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+.about-mission-block .mission-blocks .support-mission-img,
+.offer-mission-img,.confidence-mission-img, .service-mission-img {
+  width: 200px;
+  height: 70px;
+}
+
+.about-mission-block .mission-blocks img{
+  width: 80px;
+  height: 80px;
+}
+
+.about-mission-block .support-mission-img{
+  margin-left: 20px;
+}
+
+.about-mission-block .offer-mission-img{
+  margin-left: 30px;
+}
+
+.about-mission-block .confidence-mission-img{
+  margin-left: 15px;
+}
+
+.about-mission-block .service-mission-img{
+  margin-left: 45px;
+}
+
+app-footer{
+  position: relative;
+  top:150px;
+}
+

@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<div class="main">
+
+  <div class="container-data-page">
+
+    <app-nav-bar-profile></app-nav-bar-profile>
+
+
+
+    <div class="container-personal-data">
+
+      <div class="Montserrat personal-data">
+
+        <div class="personal-data-title">
+          <h1>Редагувати дані</h1>
+        </div>
+
+        <div class="personal-data-form">
+            <form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+
+              <div class="group">
+                <label for="firstName">Ім'я :</label>
+                <input  type="text" name="firstName" id="firstName" formControlName = "firstName"  />
+              </div>
+
+              <div class="group">
+                <label for="lastName">Прізвище :</label>
+                <input formControlName = "lastName" type="text" name="lastName" id="lastName"  />
+              </div>
+
+              <div class="group">
+                <label for="phoneNumber">Номер телефону :</label>
+                <input formControlName = "phoneNumber" type="text" name="phoneNumber" id="phoneNumber"/>
+              </div>
+
+
+
+              <div class="group">
+                <label for="countries">Країна : </label>
+                    <select  formControlName="countryId" (change)="onCountryChange($event)" class="select-country" id="countries" name="countries">
+                      <option value="null" disabled selected>Країна</option>
+                      <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+                    </select>
+              </div>
+
+                <div class="group">
+                  <label for="cities">Місто : </label>
+                  <select formControlName="locationId" class="select-cities" id="cities" name="cities">
+                      <option [value]="null" disabled [selected]="true">Місто</option>
+                      <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+                  </select>
+              </div>
+
+              <div class="block-btn">
+                <button type = "submit" [disabled]="!documentForm.valid" class="btn-edit-save">Зберегти</button>
+                <button type="reset" class="btn-edit-reset">Відмінити</button>
+              </div>
+            </form>
+
+
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,101 @@
+<app-header></app-header>
+
+<div class="main">
+  <div class="container-data-page">
+    <app-admin-dashboard></app-admin-dashboard>
+
+    <div class="container-tours">
+
+      <div class="tours-list Montserrat">
+
+        <div class="tours-title">
+          <h1>Список турів</h1>
+        </div>
+
+        <mat-form-field >
+          <mat-label for="sorting">Сортувати за</mat-label>
+          <mat-select (selectionChange)="onSelectChange($event.value)" name="sorting" id="sorting">
+            <mat-option value="1">Збільшенням ціни</mat-option>
+            <mat-option value="2">Зниженням ціни</mat-option>
+            <mat-option value="3">Найближчою датою початку туру</mat-option>
+          </mat-select>
+<!--          <button type="submit " [disabled]="!documentForm.valid">Сортувати</button>-->
+        </mat-form-field>
+
+        <div class="filter">
+
+
+        </div>
+        <div class="all-tours">
+          <div class="tour" *ngFor="let tour of tours">
+
+
+              <div class="tour-container-without-btn">
+
+
+
+            <div class="container-img">
+              <div class="tour-image">
+                <p><img src="assets/images/{{tour.imagePath}}" alt="Tour image"></p>
+              </div>
+            </div>
+
+            <div class="tour-info">
+
+              <div class="container-title">
+                <h2 class="tour-title">{{tour.name}}</h2>
+              </div>
+
+              <div class="container-info">
+                <div class="tours-main-fields">
+                  <div class="icons-for-info">
+                    <p class="tour-category-img"><img src="./assets/images/icons/tour-category.png" alt="tour category img" /></p>
+                    <p class="tour-description-img"><img src="./assets/images/icons/tour-desc.png" alt="tour description img"/> </p>
+                    <p class="tour-departure-img"><img src="./assets/images/icons/tour-location.png" alt="tour departure img"/></p>
+                    <p class="tour-destination-img"><img src="./assets/images/icons/tour-location.png" alt="tour destination img"/></p>
+                    <p class="tour-date-start-img"><img src="./assets/images/icons/tour-date.png" alt="tour date img"/> </p>
+                    <p class="tour-date-end-img"><img src="./assets/images/icons/tour-date.png" alt="tour end img"/> </p>
+                    <p class="tour-price-img"><img src="./assets/images/icons/tour-price.png" alt="tour price img"/> </p>
+                  </div>
+                  <div class="fields-for-info">
+                    <p class="tour-category-text">{{tour.category.name}}</p>
+                    <p class="tour-description-text">{{tour.description}}</p>
+                    <p class="tour-departure-text"><b>From</b> {{tour.departure.country.name}} , {{tour.departure.city}}</p>
+                    <p class="tour-destination-text"><b>To</b> {{tour.destination.country.name}} , {{tour.destination.city}}</p>
+                    <p class="tour-date-start-text"> <b>Start</b> {{tour.startDate}}</p>
+                    <p class="tour-date-end-text"> <b>End</b> {{tour.endDate}}</p>
+                    <p class="tour-price-text">{{ tour.initialPrice | currency: ' ₴'}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="buttons">
+              <a class="btn btn-info" routerLink="/tours/{{tour.id}}">Детальніше</a>
+              <a class="btn btn-warning" routerLink="/tours/{{tour.id}}/update">Оновити</a>
+              <a class="btn btn-danger" href="/admin-tours/#" (click)="delete(tour.id)">Видалити</a>
+            </div>
+
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+<mat-paginator class="mat-paginator"
+               [pageSize]="page.pageSize"
+               [pageIndex]="pageIndex"
+               [pageSizeOptions]="pageSizeOptions"
+               [length]="page.totalElements"
+               (page)="onPageChange($event)">
+
+</mat-paginator>
+
+<app-footer></app-footer>
+
+
+
