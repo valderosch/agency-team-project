@@ -9,8 +9,9 @@
 - Maven 3 as build tool 🔨
 - MySQL for data 📊
 - Angular with TypeScript as WEB page developing tools 🚨
+- Node JS as build tool ⚙
 
-### How - to - use:
+### How - to - run:
 1) Clone project to your PC.
 ---
 2) Create new MySQL Super user in your system.
@@ -33,3 +34,12 @@
 
 *Local server working adress located on `**https:/localhost:8080**`
 *Local client working adress located on `**https:/localhost:4200**`
+
+### How - to - use:
+1) Login to yuor account.
+2) If you dont`t have then create one.
+3) Navigate to Tours page.
+4) Choose one of needed.
+5) Or use search filter.
+6) Then order tour.
+7) Have fun in your vacation trip. 
