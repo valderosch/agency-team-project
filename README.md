@@ -43,3 +43,7 @@
 5) Or use search filter.
 6) Then order tour.
 7) Have fun in your vacation trip. 
+
+More information about project structure you can find in file SRS.
+
+Have fun using this application. 😉🤴🏽
